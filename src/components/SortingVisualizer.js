@@ -10,19 +10,34 @@ import { selectionSort } from '../algorithms/selectionSort';
 import { generateRandomArray } from '../utils/arrayUtils';
 import './SortingVisualizer.css';
 
+const complexities = {
+    'Bubble Sort': { time: 'O(n²)', space: 'O(1)' },
+    'Counting Sort': { time: 'O(n + k)', space: 'O(k)' },
+    'Heap Sort': { time: 'O(n log n)', space: 'O(1)' },
+    'Insertion Sort': { time: 'O(n²)', space: 'O(1)' },
+    'Merge Sort': { time: 'O(n log n)', space: 'O(n)' },
+    'Quick Sort': { time: 'O(n log n)', space: 'O(log n)' },
+    'Radix Sort': { time: 'O(d(n + k))', space: 'O(n + k)' },
+    'Selection Sort': { time: 'O(n²)', space: 'O(1)' }
+};
+
 const SortingVisualizer = () => {
     const [array, setArray] = useState([]);
     const [algorithm, setAlgorithm] = useState('Bubble Sort');
-    const [speed, setSpeed] = useState(50);
+    const [speed, setSpeed] = useState(25);
     const [highlightedLine, setHighlightedLine] = useState(null);
+    const [sortedArray, setSortedArray] = useState([]);
+    const [sorting, setSorting] = useState(false);
 
     useEffect(() => {
         resetArray();
     }, []);
 
     const resetArray = () => {
-        const newArray = generateRandomArray(50);
+        const newArray = generateRandomArray(25);
         setArray(newArray);
+        setSortedArray([]);
+        setHighlightedLine(null);
     };
 
     const handleSort = () => {
@@ -69,6 +84,10 @@ const SortingVisualizer = () => {
                 else {
                     arrayBars[barOneIdx].style.backgroundColor = 'red';
                     arrayBars[barTwoIdx].style.backgroundColor = 'red';
+                }
+                if (i === animations.length - 1) {
+                    setSorting(false);
+                    setSortedArray([...array].sort((a, b) => a - b));
                 }
             }, i * speed);
         }
@@ -197,41 +216,49 @@ const SortingVisualizer = () => {
         }
     };
 
-    const handleSwap = (index1, index2) => {
-        const newArray = [...array];
-        [newArray[index1], newArray[index2]] = [newArray[index2], newArray[index1]];
-        setArray(newArray);
-    };
-
     return (
         <div className="visualizer">
             <div className="controls">
-                <button onClick={resetArray}>Generate New Array</button>
-                <select onChange={(e) => setAlgorithm(e.target.value)}>
-                    <option>Bubble Sort</option>
-                    <option>Counting Sort</option>
-                    <option>Heap Sort</option>
-                    <option>Insertion Sort</option>
-                    <option>Merge Sort</option>
-                    <option>Quick Sort</option>
-                    <option>Radix Sort</option>
-                    <option>Selection Sort</option>
+                <button onClick={resetArray} disabled={sorting}>
+                    Generate New Array
+                </button>
+                <select onChange={(e) => setAlgorithm(e.target.value)} disabled={sorting}>
+                    {Object.keys(complexities).map((algo) => (
+                        <option key={algo}> {algo} </option>
+                    ))}
                 </select>
-                <button onClick={handleSort}>Sort</button>
-                <input type="range" min="1" max="100" value={speed} onChange={(e) => setSpeed(e.target.value)}/>
+                <button onClick={handleSort} disabled={sorting}> Sort </button>
+                <input type="range" min="1" max="100" value={speed}
+                onChange={(e) => setSpeed(e.target.value)} disabled={sorting}/>
+            </div>
+            <h3> Generated Array </h3>
+            <div className="array-values">
+                {array.join(', ')}
             </div>
             <div className="array-container">
                 {array.map((value, idx) => (
-                    <div className="array-bar" key={idx} style={{ height: `${value}px` }}
-                        onClick={() => handleSwap(idx, (idx + 1) % array.length)}>
-                    </div>
+                    <div className="array-bar" key={idx} style={{ height: `${value}px` }}></div>
                 ))}
             </div>
+            {!sorting && sortedArray.length > 0 && (
+                <div className="sorted-info">
+                    <div>
+                        <h3> Sorted Array </h3>
+                        {sortedArray.join(', ')}
+                    </div>
+                    <div>
+                        <br/> <strong> Time Complexity: </strong> {complexities[algorithm].time}
+                    </div>
+                    <div>
+                        <strong> Space Complexity: </strong> {complexities[algorithm].space}
+                    </div>
+                </div>
+            )}
             <div className="code-container">
                 <pre>
                     <code>
                         {getCodeForAlgorithm().split('\n').map((line, index) => (
-                            <div key={index} className = { highlightedLine === index ? 'highlighted-line' : ''}>
+                            <div key={index} className={ highlightedLine === index ? 'highlighted-line' : ''}>
                                 {line}
                             </div>
                         ))}
