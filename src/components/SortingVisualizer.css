@@ -37,6 +37,13 @@
     z-index: 1;
 }
 
+.array-values {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
 .array-bar {
     background-color: #007bff;
     width: 10px;
