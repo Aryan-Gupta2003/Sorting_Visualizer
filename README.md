@@ -1,70 +1,120 @@
-# Getting Started with Create React App
+# Sort Visualizer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Sort Visualizer is an interactive web application that visually demonstrates various sorting algorithms. The tool is designed to help users understand sorting processes step-by-step, making it an excellent educational tool for students, educators, and anyone interested in data structures and algorithms (DSA).
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Features](#features)
+- [Demo](#demo)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Available Sorting Algorithms](#available-sorting-algorithms)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Visualize Sorting Algorithms**: Step-by-step visualization of popular sorting algorithms.
+- **Code Highlighting**: Shows which part of the algorithm is being executed in real-time.
+- **Responsive Design**: Works on desktops, tablets, and mobile devices.
+- **User Interaction**: Allows users to manually swap and compare elements.
+- **Complexity Display**: Displays time and space complexity of the selected algorithm.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Demo
 
-### `npm test`
+Check out the live demo of the project [here](#).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
+- **React**: Frontend JavaScript library for building interactive UIs.
+- **JavaScript**: Core language for implementing algorithms.
+- **CSS**: Styling for responsive and interactive designs.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Node.js**: Ensure you have Node.js installed on your machine. You can download it from [Node.js Official Website](https://nodejs.org/).
 
-### `npm run eject`
+### Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Clone the repository**:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   git clone https://github.com/yourusername/sort-visualizer.git
+   cd sort-visualizer
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. **Install dependencies**:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```bash
+   npm install
+   ```
 
-## Learn More
+3. **Run the application**:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   npm start
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. **Open the application in your browser**:
+   ```bash
+   http://localhost:3000
+   ```
 
-### Code Splitting
+## Available Sorting Algorithms
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Bubble Sort
+- Counting Sort
+- Heap Sort
+- Insertion Sort
+- Merge Sort
+- Quick Sort
+- Radix Sort
+- Selection Sort
 
-### Analyzing the Bundle Size
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. **Generate New Array**: Click the button to generate a random array.
+2. **Select Algorithm**: Choose a sorting algorithm from the dropdown menu.
+3. **Adjust Speed**: Use the slider to adjust the sorting speed.
+4. **Sort**: Click the Sort button to see the algorithm in action.
+5. **View Code**: The code being executed is highlighted in real-time on the left side of the screen.
+6. **Complexity Display**: Once sorting is completed, view the sorted array along with time and space complexity.
 
-### Making a Progressive Web App
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    ```plaintest
+    sort-visualizer/
+    │
+    ├── public/                  # Static files
+    │   ├── index.html
+    │   └── favicon.ico
+    │
+    ├── src/
+    │   ├── algorithms/          # Sorting algorithms
+    │   ├── utils/               # Utility functions
+    │   ├── components/          # React components
+    │   ├── App.js               # Main App component
+    │   ├── index.js             # Main entry point
+    │   └── index.css            # Global styles
+    │
+    ├── .gitignore               # Git ignore file
+    ├── package.json             # NPM package configuration
+    ├── package-lock.json        # Lock file for dependencies
+    └── README.md                # Project readme with instructions and details
+    ```
 
-### Advanced Configuration
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Contributions are welcome! If you have suggestions for new features, bug fixes, or improvements, feel free to open an issue or submit a pull request.
 
-### Deployment
+### Steps to Contribute
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Fork the project.
+2. Create your feature branch (git checkout -b feature/YourFeature).
+3. Commit your changes (git commit -m 'Add YourFeature').
+4. Push to the branch (git push origin feature/YourFeature).
+5. Open a Pull Request.
