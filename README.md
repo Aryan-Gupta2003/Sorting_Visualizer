@@ -12,7 +12,6 @@ Sort Visualizer is an interactive web application that visually demonstrates var
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
