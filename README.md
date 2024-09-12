@@ -85,26 +85,26 @@ Check out the live demo of the project [here](https://thriving-cactus-0ff245.net
 
 ## Project Structure
 
-    ```plaintest
-    sort-visualizer/
-    │
-    ├── public/                  # Static files
-    │   ├── index.html
-    │   └── favicon.ico
-    │
-    ├── src/
-    │   ├── algorithms/          # Sorting algorithms
-    │   ├── utils/               # Utility functions
-    │   ├── components/          # React components
-    │   ├── App.js               # Main App component
-    │   ├── index.js             # Main entry point
-    │   └── index.css            # Global styles
-    │
-    ├── .gitignore               # Git ignore file
-    ├── package.json             # NPM package configuration
-    ├── package-lock.json        # Lock file for dependencies
-    └── README.md                # Project readme with instructions and details
-    ```
+```plaintest
+sort-visualizer/
+│
+├── public/                  # Static files
+│   ├── index.html
+│   └── favicon.ico
+│
+├── src/
+│   ├── algorithms/          # Sorting algorithms
+│   ├── utils/               # Utility functions
+│   ├── components/          # React components
+│   ├── App.js               # Main App component
+│   ├── index.js             # Main entry point
+│   └── index.css            # Global styles
+│
+├── .gitignore               # Git ignore file
+├── package.json             # NPM package configuration
+├── package-lock.json        # Lock file for dependencies
+└── README.md                # Project readme with instructions and details
+```
 
 ## Contributing
 
