@@ -42,8 +42,8 @@ Check out the live demo of the project [here](https://thriving-cactus-0ff245.net
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/yourusername/sort-visualizer.git
    cd sort-visualizer
+   git clone https://github.com/Aryan-Gupta2003/Sorting_Visualizer.git
    ```
 
 2. **Install dependencies**:
